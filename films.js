@@ -27,7 +27,7 @@ const films = [
   },
   {
     title: "Il favoloso mondo di Amélie",
-    posterTitle: "IL FAVOLOSO<br>MONDO DI AMÉLIE",
+    posterTitle: "IL<br> FAVOLOSO<br>MONDO<br> DI<br> AMÉLIE",
     poster: "assets/locandine/amelie.jpg",
     genre: "Commedia · 2001",
     description: "Una giovane donna decide di cambiare in segreto la vita delle persone che incontra, riscoprendo intanto la propria.",
