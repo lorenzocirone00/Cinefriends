@@ -16,6 +16,7 @@ const films = [
   {
     title: "Il favoloso mondo di Amélie",
     posterTitle: "IL FAVOLOSO<br>MONDO DI AMÉLIE",
+    poster: "assets/locandine/amelie.jpg",
     genre: "Commedia · 2001",
     description: "Una giovane donna decide di cambiare in segreto la vita delle persone che incontra, riscoprendo intanto la propria.",
     date: "Lunedì 9 Novembre",
@@ -27,6 +28,7 @@ const films = [
   {
     title: "Nuovo Cinema Paradiso",
     posterTitle: "NUOVO CINEMA<br>PARADISO",
+    poster: "assets/locandine/cinema_paradiso.jpg",
     genre: "Drammatico · 1988",
     description: "Un omaggio alla magia del grande schermo, all'amicizia e ai ricordi che ci accompagnano per tutta la vita.",
     date: "Lunedì 16 Novembre",
@@ -38,6 +40,7 @@ const films = [
   {
     title: "The Truman Show",
     posterTitle: "THE TRUMAN<br>SHOW",
+    poster: "assets/locandine/truman_show.jpg",
     genre: "Fantascienza · 1998",
     description: "E se il mondo che conosci fosse soltanto un enorme palcoscenico? Una commedia brillante che apre molte domande.",
     date: "Lunedì 23 dicembre",
