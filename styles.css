@@ -18,3 +18,38 @@
   .schedule-item{grid-template-columns:30px 1fr 30px}
   .schedule-thumb{display:none}
 }
+/* === Immagine hero === */
+.hero-img{display:block;width:84%;height:auto;aspect-ratio:4/3;object-fit:cover;transform:rotate(-3deg);box-shadow:18px 20px 0 #171716;margin-top:-18px}
+/* === Locandine nella programmazione su mobile === */
+@media(max-width:760px){
+  .hero-img{width:88%;margin-top:0;box-shadow:12px 14px 0 #171716}
+  .schedule-item{grid-template-columns:26px 50px 1fr 30px;gap:6px 14px;align-items:start}
+  .schedule-number{grid-column:1;grid-row:1}
+  .schedule-thumb{display:block;grid-column:2;grid-row:1/4;width:50px}
+  .schedule-date{grid-column:3;grid-row:1}
+  .schedule-film{grid-column:3;grid-row:2}
+  .schedule-place{grid-column:3;grid-row:3}
+  .schedule-book{grid-column:4;grid-row:1/4;align-self:center}
+}
+/* === Sezione Proposte === */
+.proposals-section{background:var(--paper);padding:90px 0 85px}
+.proposals-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:6%;align-items:start}
+.proposals-copy h3{font-family:"Playfair Display",serif;font-size:26px;margin:0 0 22px}
+.proposals-steps{list-style:none;margin:0;padding:0;counter-reset:step}
+.proposals-steps li{position:relative;padding:0 0 22px 46px;counter-increment:step}
+.proposals-steps li:before{content:counter(step);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:12px;font-weight:700}
+.proposals-steps strong{display:block;font-size:13px;margin-bottom:6px}
+.proposals-steps span{display:block;font-size:12px;line-height:1.7;color:#77736d}
+.proposals-steps a{color:var(--orange);font-weight:700}
+.proposals-note{font-size:11px;color:#898278;margin:4px 0 0}
+.proposals-box{background:#fffdf8;padding:28px 30px;min-height:260px}
+.giscus-fallback{font-size:12px;line-height:1.8;color:#77736d;margin:0;padding:30px 0;text-align:center}
+@media(max-width:760px){
+  .proposals-section{padding:65px 0}
+  .proposals-grid{grid-template-columns:1fr;gap:30px}
+  .proposals-box{padding:18px 14px}
+}
+.hero-art{height:auto;min-height:350px;flex-direction:column;gap:18px;padding-bottom:6px}
+.hero-img{margin-top:0}
+.art-caption{position:static;align-self:flex-end}
+@media(max-width:760px){.hero-art{min-height:0;height:auto}}
