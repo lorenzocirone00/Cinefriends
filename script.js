@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <a class="schedule-book" href="#prenota" aria-label="Prenota ${film.title}">↗</a>`;
     list.appendChild(row);
   });
+  loadGiscus();
   document.getElementById("year").textContent = new Date().getFullYear();
   const toggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".nav");
@@ -47,3 +48,29 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => nav.classList.remove("nav-open")));
 });
+
+// Sezione "Proposte": carica Giscus solo se giscus-config.js è stato compilato.
+function loadGiscus() {
+  const cfg = window.GISCUS_CONFIG || {};
+  const container = document.getElementById("giscus-container");
+  const fallback = document.getElementById("giscus-fallback");
+  if (!container) return;
+  if (!cfg.repo || !cfg.repoId || !cfg.categoryId) {
+    if (fallback) fallback.hidden = false;
+    console.info("Giscus non configurato: compila giscus-config.js (vedi README).");
+    return;
+  }
+  const s = document.createElement("script");
+  s.src = "https://giscus.app/client.js";
+  s.async = true;
+  s.crossOrigin = "anonymous";
+  const attrs = {
+    repo: cfg.repo, "repo-id": cfg.repoId,
+    category: cfg.category || "Proposte", "category-id": cfg.categoryId,
+    mapping: "specific", term: cfg.term || "Proposte Cinefriends",
+    strict: "0", "reactions-enabled": "1", "emit-metadata": "0",
+    "input-position": "top", theme: cfg.theme || "light", lang: "it", loading: "lazy"
+  };
+  Object.entries(attrs).forEach(([k, v]) => s.setAttribute("data-" + k, v));
+  container.appendChild(s);
+}
